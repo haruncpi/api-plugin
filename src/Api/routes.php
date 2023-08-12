@@ -12,13 +12,6 @@ use Haruncpi\ApiPlugin\Api\ApiAuth;
 use Haruncpi\ApiPlugin\Api\ApiController;
 use Haruncpi\WpApi\ApiRoute;
 
-
-/**
- * NOTE
- *
- * Base URL: yourdomain.com/wp-json/api-plugin/v1
- */
-
 /**
  * Public API route example.
  *
