@@ -44,6 +44,16 @@ class ApiController {
 	 * @return void JSON response.
 	 */
 	public function categories( WP_REST_Request $request ) {
+		/**
+		 * Authenticated user.
+		 *
+		 * @var \WP_User
+		 */
+		$user = $request->user;
+
+		/**
+		 * TODO with this user, you can do more check.
+		 */
 		$this->api_data( get_categories() );
 	}
 
@@ -55,6 +65,13 @@ class ApiController {
 	 * @return void JSON response.
 	 */
 	public function posts( WP_REST_Request $request ) {
+		/**
+		 * Authenticated user.
+		 *
+		 * @var \WP_User
+		 */
+		$user = $request->user;
+
 		$this->api_data( get_posts() );
 	}
 }
