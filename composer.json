@@ -1,0 +1,18 @@
+{
+    "name": "haruncpi/api-plugin",
+    "description": "An example WP plugin for WP API package",
+    "authors": [
+        {
+            "name": "Harun",
+            "email": "harun.cox@gmail.com"
+        }
+    ],
+    "require": {
+        "haruncpi/wp-api": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haruncpi\\ApiPlugin\\":"src/"
+        }
+    }
+}
