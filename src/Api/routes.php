@@ -12,13 +12,15 @@ use Haruncpi\ApiPlugin\Api\ApiAuth;
 use Haruncpi\ApiPlugin\Api\ApiController;
 use Haruncpi\WpApi\ApiRoute;
 
+$prefix = 'api-plugin/v1';
+
 /**
  * Public API route example.
  *
  * You can access this api's without any authentication.
  */
 ApiRoute::prefix(
-	'api-plugin/v1',
+	$prefix,
 	function( ApiRoute $route ) {
 		$route->get( 'me', array( ApiController::class, 'me' ) );
 	}
@@ -36,9 +38,16 @@ ApiRoute::prefix(
  * the controller method will receive a WP_User object that can be access by $request->user.
  */
 ApiRoute::prefix(
-	'api-plugin/v1',
+	$prefix,
 	function( ApiRoute $route ) {
 		$route->get( 'categories', array( ApiController::class, 'categories' ) );
 		$route->get( 'posts', array( ApiController::class, 'posts' ) );
 	}
 )->auth( array( ApiAuth::class, 'check' ) );
+
+ApiRoute::prefix( $prefix )->get( 'hello', array( ApiController::class, 'hello' ) );
+
+/**
+ * Get all registered route list.
+ */
+$routes = ApiRoute::get_routes();

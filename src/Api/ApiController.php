@@ -37,6 +37,15 @@ class ApiController {
 	}
 
 	/**
+	 * Hello
+	 *
+	 * @return void
+	 */
+	public function hello() {
+		$this->api_success( 'Hello' );
+	}
+
+	/**
 	 * All categories.
 	 *
 	 * @param WP_REST_Request $request request.
